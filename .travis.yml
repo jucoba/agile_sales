@@ -1,3 +1,22 @@
+---
 languaje: ruby
 rvm:
-	- 1.9.3
+- 1.9.3
+env:
+  global:
+  - secure: ! 'MpIbmEbcoeFm9Ncxt9uUVSqH9RpwRwZGno7iO4CRLjsVjEGDwmuyVQkhP/Tr
+
+      lcePnrsqh9xCEcgmDi2r4UTNQpTJt7p7q7UetISm/FSZ7jRIGZIQv9KH22Ul
+
+      s8Xbd3xfrT/9b9bSdaFMIP+DAD47fnHQDM+V7cIlrsW/n7Z0xPc='
+
+after_success:
+  - wget -qO- https://toolbelt.heroku.com/install-ubuntu.sh | sh
+  - git remote add heroku git@heroku.com:young-waters-2998.git
+  - echo "Host heroku.com" >> ~/.ssh/config
+  - echo "   StrictHostKeyChecking no" >> ~/.ssh/config
+  - echo "   CheckHostIP no" >> ~/.ssh/config
+  - echo "   UserKnownHostsFile=/dev/null" >> ~/.ssh/config
+  - heroku keys:clear
+  - yes | heroku keys:add
+  - yes | git push heroku master
