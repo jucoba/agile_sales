@@ -2,10 +2,12 @@ Given(/^I am on the inventory manager page$/) do
 	visit '/inventory/manage'
 end
 
-When(/^I register Dish Wahser (\d+) (\d+)$/) do |arg1, arg2|
+
+
+When(/^I register "(.*?)" (\d+) (\d+)$/) do |pruduct, value, quantiy|
   pending # express the regexp above with the code you wish you had
 end
 
-Then(/^I should see ok$/) do
+Then(/^I should see "(.*?)"$/) do |content|
   pending # express the regexp above with the code you wish you had
 end
