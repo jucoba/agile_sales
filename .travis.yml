@@ -1,7 +1,7 @@
 ---
 languaje: ruby
 rvm:
-- 1.9.3
+  - 1.9.3
 env:
   global:
   - secure: ! 'MpIbmEbcoeFm9Ncxt9uUVSqH9RpwRwZGno7iO4CRLjsVjEGDwmuyVQkhP/Tr
@@ -9,8 +9,10 @@ env:
       lcePnrsqh9xCEcgmDi2r4UTNQpTJt7p7q7UetISm/FSZ7jRIGZIQv9KH22Ul
 
       s8Xbd3xfrT/9b9bSdaFMIP+DAD47fnHQDM+V7cIlrsW/n7Z0xPc='
-before_script:
-	rake db:migrate	
+
+script: 
+  - RAILS_ENV=test bundle exec rake db:migrate --trace
+  - bundle exec rake db:test:prepare
 
 after_success:
   - wget -qO- https://toolbelt.heroku.com/install-ubuntu.sh | sh
