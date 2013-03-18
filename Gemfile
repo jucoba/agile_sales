@@ -7,6 +7,7 @@ gem 'rails', '3.2.12'
 
 group :development do
 	gem 'sqlite3', '1.3.5'
+	gem 'rspec-rails'
 end
 
 
@@ -25,9 +26,10 @@ end
 gem 'jquery-rails'
 
 group :test do
-	gem 'cucumber-rails', '1.2.1', :require => false
+	gem 'cucumber-rails' 
  	gem 'database_cleaner', '0.7.0'
 	gem 'rake'
+	gem 'capybara' 
 end
 
 group :production do

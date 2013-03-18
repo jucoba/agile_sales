@@ -5,7 +5,8 @@ end
 
 
 When(/^I register "(.*?)" (\d+) (\d+)$/) do |pruduct, value, quantiy|
-  pending # express the regexp above with the code you wish you had
+	product = Product.new(product, value, quantity)
+	product.save	
 end
 
 Then(/^I should see "(.*?)"$/) do |content|
