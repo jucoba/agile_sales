@@ -1,7 +1,12 @@
 AgileSales::Application.routes.draw do
+  resources :users
+	resources :products
+	match '/inventory/manage/' => 'products#manage'
+	#match '/products' => 'products#manage'
+
+
   # The priority is based upon order of creation:
   # first created -> highest priority.
-	match '/inventory/manage/' => 'products#manage'
   # Sample of regular route:
   #   match 'products/:id' => 'catalog#view'
   # Keep in mind you can assign values other than :controller and :action

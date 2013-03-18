@@ -4,11 +4,13 @@ end
 
 
 
-When(/^I register "(.*?)" (\d+) (\d+)$/) do |pruduct, value, quantiy|
-	product = Product.new(product, value, quantity)
-	product.save	
+When(/^I register "(.*?)" (\d+) (\d+)$/) do |product_name, value, quantity|
+	fill_in "product_name", with: product_name
+	fill_in "product_value", with: value
+	fill_in "product_quantity", with: quantity
+	click_button ("Registrar producto")
 end
 
 Then(/^I should see "(.*?)"$/) do |content|
-  pending # express the regexp above with the code you wish you had
+	page.should have_content("ok")
 end
