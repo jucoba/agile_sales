@@ -9,6 +9,8 @@ env:
       lcePnrsqh9xCEcgmDi2r4UTNQpTJt7p7q7UetISm/FSZ7jRIGZIQv9KH22Ul
 
       s8Xbd3xfrT/9b9bSdaFMIP+DAD47fnHQDM+V7cIlrsW/n7Z0xPc='
+before_script:
+	rake db:migrate	
 
 after_success:
   - wget -qO- https://toolbelt.heroku.com/install-ubuntu.sh | sh
