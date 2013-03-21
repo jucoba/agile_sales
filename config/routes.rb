@@ -1,7 +1,7 @@
 AgileSales::Application.routes.draw do
   resources :users
 	resources :products
-	match '/inventory/manage/' => 'products#manage'
+	#match '/inventory/manage/' => 'products#manage'
 	#match '/products' => 'products#manage'
 
 

@@ -1,5 +1,5 @@
 Given(/^I am on the inventory manager page$/) do
-	visit '/inventory/manage'
+	visit '/products'
 end
 
 
@@ -12,5 +12,5 @@ When(/^I register "(.*?)" (\d+) (\d+)$/) do |product_name, value, quantity|
 end
 
 Then(/^I should see "(.*?)"$/) do |content|
-	page.should have_content("ok")
+	page.should have_content(content)
 end

@@ -12,5 +12,7 @@ Then I should see "<result>"
 
 Examples:
 	|product|price|quantity|result|
-	|Dish Wahser|35000|4|ok|
-	|Multi Usos|33000|3|ok|
+	|Dish Washer|35000|4|Dish Washer|
+	|Multi Usos|33000|3|Multi Usos|
+
+

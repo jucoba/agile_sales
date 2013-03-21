@@ -1,5 +1,6 @@
 class ProductsController < ApplicationController
-	def manage
+	def index
+		@products = Product.all
 		@product = Product.new	
 		@result = ""		
 	end
@@ -11,6 +12,6 @@ class ProductsController < ApplicationController
 		else
 			@result = "fail"
 		end
-		render 'manage'
+		redirect_to products_path
 	end
 end
