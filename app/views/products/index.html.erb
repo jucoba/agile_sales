@@ -29,7 +29,7 @@
 							<td><%= html_escape(p.name) %></td>
 							<td><%= html_escape(p.value) %></td>
 							<td><%= html_escape(p.quantity) %></td>
-							<td><i class="icon-remove"></i></td>
+							<td><%= link_to "delete_#{p.id}", product_path(p.id), :method => :delete%></i></td>
 						</tr>
 					<% end %>
 	</tbody>

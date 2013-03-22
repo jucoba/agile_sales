@@ -14,3 +14,12 @@ end
 Then(/^I should see "(.*?)"$/) do |content|
 	page.should have_content(content)
 end
+
+When(/^I remove "(.*?)"$/) do |product_name|
+	product = Product.find_by_name(product_name)
+	click_link("delete_#{product.id}")
+end
+
+Then(/^I should not see "(.*?)"$/) do |product_name|
+	page.should_not have_content(product_name)
+end
